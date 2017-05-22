@@ -2,7 +2,7 @@
 import { render } from 'inferno';
 import createElement from 'inferno-create-element';
 import { innerHTML } from 'inferno-utils';
-import createClass from '../src';
+import createClass from 'inferno-create-class';
 
 describe('Components createClass (non-JSX)', () => {
 	let container;
@@ -26,7 +26,7 @@ describe('Components createClass (non-JSX)', () => {
 
 	it('should render a basic component', () => {
 		render(createElement(BasicComponent), container);
-		expect(container.innerHTML).to.equal(innerHTML('<div>Hello world!</div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div>Hello world!</div>'));
 	});
 	it('should render a basic component with lifecycle', () => {
 		let componentWillUpdate = false;
@@ -41,7 +41,7 @@ describe('Components createClass (non-JSX)', () => {
 
 		render(createElement(LifecycleComponent1, {}), container);
 		render(createElement(LifecycleComponent1, {}), container);
-		expect(componentWillUpdate).to.equal(true);
+		expect(componentWillUpdate).toEqual(true);
 	});
 
 	it('should have context available in getInitialState', (done) => {
@@ -61,7 +61,7 @@ describe('Components createClass (non-JSX)', () => {
 
 		render(createElement(BoundComponent), container);
 		setTimeout(() => {
-			expect(context === context2).to.equal(true);
+			expect(context === context2).toEqual(true);
 			done();
 		}, 2);
 	});
@@ -78,7 +78,7 @@ describe('Components createClass (non-JSX)', () => {
 			}
 		});
 
-		expect(Component.propTypes).to.equal(propTypes);
+		expect(Component.propTypes).toEqual(propTypes);
 	});
 	it('should not have propTypes on created class when not specified', () => {
 		const Component = createClass({
@@ -87,7 +87,7 @@ describe('Components createClass (non-JSX)', () => {
 			}
 		});
 
-		expect(Component.propTypes).to.be.undefined;
+		expect(Component.propTypes).toBeUndefined();
 	});
 	it('should have mixins on created class', () => {
 		const mixins = [{
@@ -100,7 +100,7 @@ describe('Components createClass (non-JSX)', () => {
 			}
 		});
 		render(createElement(Component, {}), container);
-		expect(Component.mixins).to.have.property('func1');
+		expect(Component.mixins).toHaveProperty('func1');
 	});
 	it('should have nested mixins on created class', () => {
 		const mixins = [{
@@ -117,6 +117,6 @@ describe('Components createClass (non-JSX)', () => {
 			}
 		});
 		render(createElement(Component, {}), container);
-		expect(Component.mixins).to.have.property('nestedMixin');
+		expect(Component.mixins).toHaveProperty('nestedMixin');
 	});
 });
