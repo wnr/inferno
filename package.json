@@ -20,7 +20,7 @@
     "lint": "tslint packages/*/src/**/*.ts packages/*/src/**/*.tsx packages/*/src/**/*.js packages/*/src/**/*.jsx",
     "test": "npm run lint && npm run test:unit:cov",
     "test:unit": "jest",
-    "test:unit:cov": "jest --collectCoverage",
+    "test:unit:cov": "jest --coverage",
     "test:unit:publish": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
@@ -52,39 +52,5 @@
     "tslint": "^5.2.0",
     "typescript": "^2.3.2",
     "webpack": "^2.5.1"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "packages/*/src/**/*"
-    ],
-    "coverageReporters": [
-      "html",
-      "lcov",
-      "text"
-    ],
-    "projects": [
-      "<rootDir>",
-      "<rootDir>/packages/*"
-    ],
-    "moduleNameMapper": {
-      "^inferno$": "<rootDir>/packages/inferno/src",
-      "^inferno-component$": "<rootDir>/packages/inferno-component/src",
-      "^inferno-shared$": "<rootDir>/packages/inferno-shared/src",
-      "^inferno-vnode-flags$": "<rootDir>/packages/inferno-vnode-flags/src"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ],
-    "testMatch": [
-      "**/packages/*/tests/**/*.spec.js?(x)",
-      "**/packages/*/tests/**/*.spec.ts?(x)"
-    ],
-    "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    }
   }
 }

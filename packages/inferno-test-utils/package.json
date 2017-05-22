@@ -1,0 +1,49 @@
+{
+  "name": "inferno-test-utils",
+  "version": "3.1.2",
+  "license": "MIT",
+  "description": "Suite of utilities for testing Inferno applications",
+  "author": {
+    "name": "Matthew Wagerfield",
+    "email": "matthew@wagerfield.com"
+  },
+  "bugs": {
+    "url": "https://github.com/infernojs/inferno/issues"
+  },
+  "homepage": "https://github.com/infernojs/inferno#readme",
+  "keywords": [
+    "babel",
+    "react",
+    "inferno",
+    "framework",
+    "interfaces",
+    "tests",
+    "utils"
+  ],
+  "dependencies": {
+    "inferno": "3.1.2",
+    "inferno-create-class": "3.1.2",
+    "inferno-create-element": "3.1.2",
+    "inferno-shared": "3.1.1",
+    "inferno-vnode-flags": "^3.0.0"
+  },
+  "devDependencies": {
+    "inferno-component": "3.1.2",
+    "inferno-server": "3.1.2"
+  },
+  "rollup": {
+    "bundledDependencies": [
+      "inferno-shared",
+      "inferno-vnode-flags"
+    ],
+    "moduleName": "Inferno.TestUtils",
+    "moduleGlobals": {
+      "inferno": "Inferno",
+      "inferno-create-element": "Inferno.createElement"
+    }
+  },
+  "main": "index.js",
+  "inferno:main": "dist-es/index.js",
+  "typings": "dist/index.d.ts",
+  "repository": "https://github.com/infernojs/inferno"
+}

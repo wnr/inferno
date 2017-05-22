@@ -3,10 +3,14 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"inferno": ["packages/inferno/src"],
-			"inferno-component": ["packages/inferno-component/src"],
-			"inferno-shared": ["packages/inferno-shared/src"],
-			"inferno-vnode-flags": ["packages/inferno-vnode-flags/src"]
+			"inferno": [ "packages/inferno/src" ],
+			"inferno-component": [ "packages/inferno-component/src" ],
+			"inferno-create-class": [ "packages/inferno-create-class/src" ],
+			"inferno-create-element": [ "packages/inferno-create-element/src" ],
+			"inferno-shared": [ "packages/inferno-shared/src" ],
+			"inferno-test-utils": [ "packages/inferno-test-utils/src" ],
+			"inferno-utils": [ "packages/inferno-utils/src" ],
+			"inferno-vnode-flags": [ "packages/inferno-vnode-flags/src" ]
 		},
 		"allowSyntheticDefaultImports": true,
 		"target": "es6",
