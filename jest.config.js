@@ -20,6 +20,7 @@ module.exports = {
 		'^inferno-component': '<rootDir>/packages/inferno-component/src',
 		'^inferno-create-class': '<rootDir>/packages/inferno-create-class/src',
 		'^inferno-create-element': '<rootDir>/packages/inferno-create-element/src',
+		'^inferno-server': '<rootDir>/packages/inferno-server/src',
 		'^inferno-shared': '<rootDir>/packages/inferno-shared/src',
 		'^inferno-test-utils': '<rootDir>/packages/inferno-test-utils/src',
 		'^inferno-utils': '<rootDir>/packages/inferno-utils/src',

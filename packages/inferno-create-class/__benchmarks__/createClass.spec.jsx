@@ -1,5 +1,5 @@
 import { render } from 'inferno';
-import createClass from '../../dist-es';
+import createClass from '../inferno-server';
 
 function runBenchmark(container) {
 	const Link0 = createClass({

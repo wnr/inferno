@@ -1,0 +1,52 @@
+{
+  "name": "inferno-server",
+  "version": "3.2.2",
+  "license": "MIT",
+  "description": "Provides methods to render HTML strings from Inferno elements",
+  "author": {
+    "name": "Dominic Gannaway",
+    "email": "dg@domgan.com"
+  },
+  "bugs": {
+    "url": "https://github.com/infernojs/inferno/issues"
+  },
+  "homepage": "https://github.com/infernojs/inferno#readme",
+  "keywords": [
+    "babel",
+    "react",
+    "inferno",
+    "framework",
+    "interfaces",
+    "user interfaces",
+    "html",
+    "renderToString",
+    "server",
+    "dom",
+    "browser",
+    "rollup"
+  ],
+  "main": "index.js",
+  "inferno:main": "dist-es/index.js",
+  "typings": "dist/index.d.ts",
+  "repository": "https://github.com/infernojs/inferno",
+  "dependencies": {
+    "inferno": "3.2.2",
+    "inferno-shared": "3.1.1",
+    "inferno-vnode-flags": "^3.0.0"
+  },
+  "devDependencies": {
+    "inferno-component": "3.2.2",
+    "inferno-create-class": "3.2.2",
+    "inferno-create-element": "3.2.2"
+  },
+  "rollup": {
+    "bundledDependencies": [
+      "inferno-shared",
+      "inferno-vnode-flags"
+    ],
+    "moduleName": "Inferno.Server",
+    "moduleGlobals": {
+      "inferno": "Inferno"
+    }
+  }
+}

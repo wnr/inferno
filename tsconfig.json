@@ -7,6 +7,7 @@
 			"inferno-component": [ "packages/inferno-component/src" ],
 			"inferno-create-class": [ "packages/inferno-create-class/src" ],
 			"inferno-create-element": [ "packages/inferno-create-element/src" ],
+			"inferno-server": [ "packages/inferno-server/src" ],
 			"inferno-shared": [ "packages/inferno-shared/src" ],
 			"inferno-test-utils": [ "packages/inferno-test-utils/src" ],
 			"inferno-utils": [ "packages/inferno-utils/src" ],
