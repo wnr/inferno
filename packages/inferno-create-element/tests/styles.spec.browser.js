@@ -149,7 +149,6 @@ describe('CSS style properties', () => {
 			})
 		}].forEach((test) => {
 			it(test.description, () => {
-
 				render(test.template(), container);
 				expect(container.firstChild.nodeType).toEqual(1);
 				expect(container.firstChild.getAttribute('style')).to.be.oneOf(style(arg.expected));

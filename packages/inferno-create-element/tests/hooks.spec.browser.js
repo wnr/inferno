@@ -86,8 +86,8 @@ describe('lifecycle hooks', () => {
 
 			render(node, container);
 			expect(sinonSpy.callCount).toEqual(1);
-			expect(sinonSpy.getCall(0).args[ 0 ]).to.be.an('object');
-			expect(sinonSpy.getCall(0).args[ 1 ]).to.be.an('object');
+			expect(sinonSpy.getCall(0).args[ 0 ]).toBeInstanceOf(Object);
+			expect(sinonSpy.getCall(0).args[ 1 ]).toBeInstanceOf(Object);
 		});
 
 		it('"onComponentDidUpdate" hook should fire', () => {

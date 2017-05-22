@@ -1,3 +1,4 @@
+
 import { render } from 'inferno';
 import createElement from 'inferno-create-element';
 import { innerHTML } from 'inferno-utils';
@@ -121,7 +122,7 @@ describe('CreateElement (non-JSX)', () => {
 	});
 
 	it('Should throw with invalid name', () => {
-		expect(() => createElement({}, null)).to.throw(Error);
+		expect(() => createElement({}, null)).toThrowError(Error);
 	});
 
 	it('Should handle node with refs', (done) => {

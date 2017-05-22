@@ -6,12 +6,12 @@ import { innerHTML } from 'inferno-utils';
 describe('Blueprints (JSX)', () => {
 	let container;
 
-	beforeEach(function() {
+	beforeEach(function () {
 		container = document.createElement('div');
 		document.body.appendChild(container);
 	});
 
-	afterEach(function() {
+	afterEach(function () {
 		document.body.removeChild(container);
 		container = null;
 	});
@@ -62,7 +62,7 @@ describe('Blueprints (JSX)', () => {
 			render() {
 				return (
 					<div>
-						{ [ 'Saab', 'Volvo', 'BMW' ].map(function(c) {
+						{ [ 'Saab', 'Volvo', 'BMW' ].map(function (c) {
 							return (<Counter car={ c }/>);
 						}) }
 					</div>
@@ -154,8 +154,8 @@ describe('Blueprints (JSX)', () => {
 				}
 
 				componentDidMount() {
-					expect(this._first).to.not.equal(null);
-					expect(this._second).to.not.equal(null);
+					expect(this._first).not.toEqual(null);
+					expect(this._second).not.toEqual(null);
 				}
 
 				render() {

@@ -91,7 +91,7 @@ describe('Stateful Component updates', () => {
 				// Call setState
 				expect(() => this.setState({
 					show: true
-				})).to.throw;
+				})).toThrowError;
 			}
 
 			domagic() {
@@ -558,7 +558,7 @@ describe('Stateful Component updates', () => {
 				return (
 					<form>
 						<input id="inputId" onFocus={(e) => {
-							expect(e).to.be.ok;
+							expect(e).toBeTruthy();
 						}} type="text"/>
 					</form>
 				);

@@ -8,12 +8,12 @@ import { assert, spy } from 'sinon';
 describe('Elements (JSX)', () => {
 	let container;
 
-	beforeEach(function() {
+	beforeEach(function () {
 		container = document.createElement('div');
 		document.body.appendChild(container);
 	});
 
-	afterEach(function() {
+	afterEach(function () {
 		render(null, container);
 		container.innerHTML = '';
 		document.body.removeChild(container);
@@ -690,7 +690,7 @@ describe('Elements (JSX)', () => {
 
 	it('should render an iframe', () => {
 		render(<iframe src="http://infernojs.org"></iframe>, container);
-		expect(container.firstChild.contentWindow).to.not.equal(undefined);
+		expect(container.firstChild.contentWindow).not.toEqual(undefined);
 	});
 
 	it('should render a HTML5 video', () => {
@@ -699,8 +699,8 @@ describe('Elements (JSX)', () => {
 				<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
 			</video>
 		), container);
-		expect(container.firstChild.volume).to.not.equal(undefined);
-		expect(container.firstChild.volume).to.be.equal(0);
+		expect(container.firstChild.volume).not.toEqual(undefined);
+		expect(container.firstChild.volume).toBeCloseTo(0);
 	});
 
 	it('should dangerously set innerHTML', () => {
@@ -890,11 +890,11 @@ describe('Elements (JSX)', () => {
 
 	describe('REST Spread JSX', () => {
 		it('Should render click event, style, className', (done) => {
-			const TextField = function(props) {
+			const TextField = function (props) {
 				return <input {...props} />;
 			};
 			const MyTextField = ({ name, className, changeName }) => <TextField className={className} value={name}
-																																					onClick={function() {
+																																					onClick={function () {
 																																						done();
 																																					}}/>;
 
@@ -924,7 +924,7 @@ describe('Elements (JSX)', () => {
 			it('Should be possible to render Progress element without value', () => {
 				render(<progress max={100}/>, container);
 				expect(container.firstChild.tagName).toEqual('PROGRESS');
-				expect(container.firstChild.getAttribute('value')).to.be.oneOf([ null, '', 0, '0' ]);
+				expect(container.firstChild.getAttribute('value')).toBeNull();
 
 				// Add as string
 				render(<progress max={100} value="3"/>, container);

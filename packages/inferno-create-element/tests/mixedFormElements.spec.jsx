@@ -1,6 +1,7 @@
 
 import { render } from 'inferno';
 import { innerHTML } from 'inferno-utils';
+import sinon from 'sinon';
 
 describe('HTML Form Elements', () => {
 	let container;

@@ -263,7 +263,7 @@ describe('Update (non-jsx)', () => {
 
 		expect(
 			() => render(template('Hello', [], ' and ', 'Zoo'), container)
-		).to.throw;
+		).toThrowError;
 
 		render(template('Hello', null, ' and ', 'Zoo'), container);
 		expect(
@@ -274,7 +274,7 @@ describe('Update (non-jsx)', () => {
 
 		expect(
 			() => render(template('Hello', {}, ' and ', 'Zoo'), container)
-		).to.throw;
+		).toThrowError;
 
 		render(template('Hello', ' poz', ' and ', 'Zoo'), container);
 		expect(
@@ -566,7 +566,7 @@ describe('Update (non-jsx)', () => {
 
 		expect(
 			() => render(template([], [], [], [], '', []), container)
-		).to.throw;
+		).toThrowError;
 	});
 
 	it('should render a basic example #7', () => {
