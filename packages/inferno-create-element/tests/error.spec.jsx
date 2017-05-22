@@ -48,11 +48,11 @@ describe('Error recovery', () => {
 		try {
 			render(<Crasher crash={true}/>, container);
 		} catch (ex) {
-			expect(ex.message).to.equal('test');
+			expect(ex.message).toEqual('test');
 		}
 
 		render(<Crasher crash={false}/>, container);
-		expect(container.firstChild.innerHTML).to.equal('2');
+		expect(container.firstChild.innerHTML).toEqual('2');
 	});
 
 	it('Should be possible to render again if user land code crashes in ComponentWillUnmount', () => {
@@ -81,26 +81,26 @@ describe('Error recovery', () => {
 
 		render(<Crasher crash={true}/>, container);
 
-		expect(container.firstChild.innerHTML).to.equal('1');
+		expect(container.firstChild.innerHTML).toEqual('1');
 
 		try {
 			render(null, container);
 		} catch (ex) {
-			expect(ex.message).to.equal('test');
+			expect(ex.message).toEqual('test');
 		}
 
 		// No change as it crashed
-		expect(container.firstChild.innerHTML).to.equal('1');
+		expect(container.firstChild.innerHTML).toEqual('1');
 
 		// Try update
 		render(<Crasher crash={false}/>, container);
 
-		expect(container.firstChild.innerHTML).to.equal('1');
+		expect(container.firstChild.innerHTML).toEqual('1');
 
 		// Should not crash now
 		render(null, container);
 
-		expect(container.innerHTML).to.equal('');
+		expect(container.innerHTML).toEqual('');
 	});
 
 	// it('Should be able to recover from subtree crash', () => {
@@ -156,10 +156,10 @@ describe('Error recovery', () => {
 	// 	try {
 	// 		render(<TreeOfCrashers suffle={true} crash={true}/>, container);
 	// 	} catch (ex) {
-	// 		expect(ex.message).to.equal('test');
+	// 		expect(ex.message).toEqual('test');
 	// 	}
 	//
 	// 	render(<TreeOfCrashers crash={false}/>, container);
-	// 	expect(container.firstChild.innerHTML).to.equal('2');
+	// 	expect(container.firstChild.innerHTML).toEqual('2');
 	// });
 });

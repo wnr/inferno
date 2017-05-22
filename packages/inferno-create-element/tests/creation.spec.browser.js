@@ -1,5 +1,5 @@
 
-import createElement from '../dist-es';
+import createElement from 'inferno-create-element';
 import { render } from 'inferno';
 
 describe('Creation - (non-JSX)', () => {
@@ -119,15 +119,15 @@ describe('Creation - (non-JSX)', () => {
 		it(test.description, () => {
 
 			render(test.template(), container);
-			expect(container.firstChild.nodeType).to.equal(1);
-			expect(container.firstChild.tagName.toLowerCase()).to.equal(test.tagName);
-			expect(container.firstChild.childNodes.length).to.equal(test.children);
-			expect(container.firstChild.textContent).to.equal(test.textContent);
+			expect(container.firstChild.nodeType).toEqual(1);
+			expect(container.firstChild.tagName.toLowerCase()).toEqual(test.tagName);
+			expect(container.firstChild.childNodes.length).toEqual(test.children);
+			expect(container.firstChild.textContent).toEqual(test.textContent);
 
 			render(test.template(), container);
-			expect(container.firstChild.nodeType).to.equal(1);
-			expect(container.firstChild.tagName.toLowerCase()).to.equal(test.tagName);
-			expect(container.firstChild.childNodes.length).to.equal(test.children);
+			expect(container.firstChild.nodeType).toEqual(1);
+			expect(container.firstChild.tagName.toLowerCase()).toEqual(test.tagName);
+			expect(container.firstChild.childNodes.length).toEqual(test.children);
 		});
 	});
 });

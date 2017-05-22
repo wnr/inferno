@@ -87,8 +87,8 @@ describe('state', () => {
 				}
 
 				componentDidUpdate(prevProps, prevState) {
-					expect(prevState.testScrollTop).to.equal(0);
-					expect(this.state.testScrollTop).to.equal(200);
+					expect(prevState.testScrollTop).toEqual(0);
+					expect(this.state.testScrollTop).toEqual(200);
 				}
 
 				render(){

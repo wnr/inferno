@@ -75,7 +75,7 @@ describe('Blueprints (JSX)', () => {
 
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><div class="my-component"><h1>Saab <span>B</span></h1><button type="button">btn</button></div><div class="my-component"><h1>Volvo <span>B</span></h1><button type="button">btn</button></div><div class="my-component"><h1>BMW <span>B</span></h1><button type="button">btn</button></div></div>')
 			);
 
@@ -92,7 +92,7 @@ describe('Blueprints (JSX)', () => {
 			requestAnimationFrame(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><div class="my-component"><h1>Saab <div>A</div></h1><button type="button">btn</button></div><div class="my-component"><h1>Volvo <div>A</div></h1><button type="button">btn</button></div><div class="my-component"><h1>BMW <div>A</div></h1><button type="button">btn</button></div></div>')
 				);
 				render(null, container);
@@ -138,7 +138,7 @@ describe('Blueprints (JSX)', () => {
 
 			render(<A open={true}/>, container);
 			setTimeout(() => {
-				expect(container.innerHTML).to.equal(innerHTML('<div>animate</div>'));
+				expect(container.innerHTML).toEqual(innerHTML('<div>animate</div>'));
 				done();
 			}, 10);
 		});
@@ -190,11 +190,11 @@ describe('Blueprints (JSX)', () => {
 
 			render(<A disabled={true}/>, container);
 			let input = container.querySelector('input');
-			expect(input.disabled).to.equal(true);
+			expect(input.disabled).toEqual(true);
 
 			render(<A disabled={false}/>, container);
 			input = container.querySelector('input');
-			expect(input.disabled).to.equal(false);
+			expect(input.disabled).toEqual(false);
 		});
 	});
 });

@@ -33,9 +33,12 @@ module.exports = {
 		'<rootDir>/packages/inferno-shared',
 		'<rootDir>/packages/inferno-vnode-flags'
 	],
+	setupFiles: [
+		'<rootDir>/scripts/test/requestAnimationFrame.ts'
+	],
 	'testMatch': [
-		'**/packages/*/tests/**/*.spec.js?(x)',
-		'**/packages/*/tests/**/*.spec.ts?(x)'
+		'**/packages/*/tests/**/*spec*.js?(x)',
+		'**/packages/*/tests/**/*spec*.ts?(x)'
 	],
 	'transform': {
 		'^.+\\.jsx?$': 'babel-jest',

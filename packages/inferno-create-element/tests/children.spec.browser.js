@@ -1,6 +1,6 @@
 
 import { render } from 'inferno';
-import createElement from '../dist-es';
+import createElement from 'inferno-create-element';
 
 describe('Children - (non-JSX)', () => {
 
@@ -194,11 +194,11 @@ describe('Children - (non-JSX)', () => {
 			it(test.description, () => {
 
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 			});
 		});
 	});
@@ -213,15 +213,15 @@ describe('Children - (non-JSX)', () => {
 			it(test.description, () => {
 
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.childNodes.length).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.childNodes.length).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.childNodes.length).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.childNodes.length).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual(arg.expected);
 
 			});
 		});
@@ -237,15 +237,15 @@ describe('Children - (non-JSX)', () => {
 			it(test.description, () => {
 
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.childNodes.length).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.childNodes.length).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.childNodes.length).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.childNodes.length).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual(arg.expected);
 
 			});
 		});
@@ -262,69 +262,69 @@ describe('Children - (non-JSX)', () => {
 			it(test.description, () => {
 
 				render(test.template(arg.value), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(arg.value), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 				render(test.template(arg.value), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 
 			});
 
 			it(test.description, () => {
 
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 				render(test.template(arg.value), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 			});
 
 			it(test.description, () => {
 
 				render(test.template(null), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 				render(test.template(arg.value), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 			});
 
 			it(test.description, () => {
 
 				render(test.template(arg.value), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(null), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 			});
 
 			it(test.description, () => {
 
 				render(test.template(), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 				render(test.template(undefined), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 
 			});
 
 			it(test.description, () => {
 
 				render(test.template(null), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 				render(test.template(null), container);
-				expect(container.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.textContent).to.equal('');
+				expect(container.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.textContent).toEqual('');
 
 			});
 
@@ -341,20 +341,20 @@ describe('Children - (non-JSX)', () => {
 			it(test.description, () => {
 
 				render(test.template(arg.value), container);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(arg.value), container);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal(arg.expected);
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual(arg.expected);
 				render(test.template(null), container);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal('');
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual('');
 				render(test.template(undefined), container);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal('');
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual('');
 				render(test.template(), container);
-				expect(container.firstChild.firstChild.nodeType).to.equal(1);
-				expect(container.firstChild.firstChild.textContent).to.equal('');
+				expect(container.firstChild.firstChild.nodeType).toEqual(1);
+				expect(container.firstChild.firstChild.textContent).toEqual('');
 			});
 		});
 	});

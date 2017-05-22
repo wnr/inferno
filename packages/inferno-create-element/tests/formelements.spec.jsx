@@ -26,29 +26,29 @@ describe('FormElements', () => {
 
 		it('Should set value as text on render', () => {
 			render(<TextBox value={1}/>, container);
-			expect(container.querySelector('input').value).to.equal('1');
+			expect(container.querySelector('input').value).toEqual('1');
 		});
 
 		it('Should override changed value on next render', () => {
 			render(<TextBox value={1}/>, container);
 			let input = container.querySelector('input');
-			expect(input.value).to.equal('1');
+			expect(input.value).toEqual('1');
 			input.value = '2'; // Simulate user typing '2'
-			expect(input.value).to.equal('2');
+			expect(input.value).toEqual('2');
 			render(<TextBox value={3}/>, container);
 			input = container.querySelector('input');
-			expect(input.value).to.equal('3');
+			expect(input.value).toEqual('3');
 		});
 
 		it('Should override changed value on next render even when value is same as on prev render', () => {
 			render(<TextBox value={1}/>, container);
 			let input = container.querySelector('input');
-			expect(input.value).to.equal('1');
+			expect(input.value).toEqual('1');
 			input.value = '2'; // Simulate user typing '2'
-			expect(input.value).to.equal('2');
+			expect(input.value).toEqual('2');
 			render(<TextBox value={1}/>, container);
 			input = container.querySelector('input');
-			expect(input.value).to.equal('1');
+			expect(input.value).toEqual('1');
 		});
 
 		it('Controlled - oninput - Should have updated props in onInput callbacks', () => {
@@ -78,8 +78,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledOnce).to.equal(true);
-			expect(spy.args[0][0]).to.equal(1); // Verify initial props are correct
+			expect(spy.calledOnce).toEqual(true);
+			expect(spy.args[0][0]).toEqual(1); // Verify initial props are correct
 
 			// Then update component
 			render(<Example callback={spy} value={2}/>, container);
@@ -88,8 +88,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledTwice).to.equal(true);
-			expect(spy.args[1][0]).to.equal(2); // Verify props have changed
+			expect(spy.calledTwice).toEqual(true);
+			expect(spy.args[1][0]).toEqual(2); // Verify props have changed
 		});
 
 		it('Controlled - onInput - Should have updated props in onInput callbacks', () => {
@@ -119,8 +119,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledOnce).to.equal(true);
-			expect(spy.args[0][0]).to.equal(1); // Verify initial props are correct
+			expect(spy.calledOnce).toEqual(true);
+			expect(spy.args[0][0]).toEqual(1); // Verify initial props are correct
 
 			// Then update component
 			render(<Example callback={spy} value={2}/>, container);
@@ -129,8 +129,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledTwice).to.equal(true);
-			expect(spy.args[1][0]).to.equal(2); // Verify props have changed
+			expect(spy.calledTwice).toEqual(true);
+			expect(spy.args[1][0]).toEqual(2); // Verify props have changed
 		});
 
 		it('Controlled - onInput - Should have updated props in onInput callbacks in setState callback', () => {
@@ -170,8 +170,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledOnce).to.equal(true);
-			expect(spy.args[0][0]).to.equal(1); // Verify initial props are correct
+			expect(spy.calledOnce).toEqual(true);
+			expect(spy.args[0][0]).toEqual(1); // Verify initial props are correct
 
 			// Then update component
 			render(<Example callback={spy} value={2}/>, container);
@@ -180,9 +180,9 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledTwice).to.equal(true);
-			expect(spy.args[1][0]).to.equal(2); // Verify props have changed
-			expect(spy.args[1][1]).to.equal(2); // Verify state have changed
+			expect(spy.calledTwice).toEqual(true);
+			expect(spy.args[1][0]).toEqual(2); // Verify props have changed
+			expect(spy.args[1][1]).toEqual(2); // Verify state have changed
 		});
 
 		it('Controlled - onInput (linkEvent) - Should have updated props in onInput callbacks', () => {
@@ -211,8 +211,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledOnce).to.equal(true);
-			expect(spy.args[0][0]).to.equal(1); // Verify initial props are correct
+			expect(spy.calledOnce).toEqual(true);
+			expect(spy.args[0][0]).toEqual(1); // Verify initial props are correct
 
 			// Then update component
 			render(<Example callback={spy} value={2}/>, container);
@@ -221,8 +221,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledTwice).to.equal(true);
-			expect(spy.args[1][0]).to.equal(2); // Verify props have changed
+			expect(spy.calledTwice).toEqual(true);
+			expect(spy.args[1][0]).toEqual(2); // Verify props have changed
 		});
 
 		it('NON Controlled - onInput (linkEvent) - Should have updated props in onInput callbacks', () => {
@@ -251,8 +251,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledOnce).to.equal(true);
-			expect(spy.args[0][0]).to.equal(1); // Verify initial props are correct
+			expect(spy.calledOnce).toEqual(true);
+			expect(spy.args[0][0]).toEqual(1); // Verify initial props are correct
 
 			// Then update component
 			render(<Example callback={spy} value={2}/>, container);
@@ -261,8 +261,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledTwice).to.equal(true);
-			expect(spy.args[1][0]).to.equal(2); // Verify props have changed
+			expect(spy.calledTwice).toEqual(true);
+			expect(spy.args[1][0]).toEqual(2); // Verify props have changed
 		});
 
 		it('NON Controlled - onInput - Should have updated props in onInput callbacks', () => {
@@ -292,8 +292,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledOnce).to.equal(true);
-			expect(spy.args[0][0]).to.equal(1); // Verify initial props are correct
+			expect(spy.calledOnce).toEqual(true);
+			expect(spy.args[0][0]).toEqual(1); // Verify initial props are correct
 
 			// Then update component
 			render(<Example callback={spy} value={2}/>, container);
@@ -302,8 +302,8 @@ describe('FormElements', () => {
 			event.initEvent('input', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledTwice).to.equal(true);
-			expect(spy.args[1][0]).to.equal(2); // Verify props have changed
+			expect(spy.calledTwice).toEqual(true);
+			expect(spy.args[1][0]).toEqual(2); // Verify props have changed
 		});
 
 		it('Controlled - onChange (linkEvent) - Should have updated props in onInput callbacks', () => {
@@ -332,8 +332,8 @@ describe('FormElements', () => {
 			event.initEvent('change', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledOnce).to.equal(true);
-			expect(spy.args[0][0]).to.equal(1); // Verify initial props are correct
+			expect(spy.calledOnce).toEqual(true);
+			expect(spy.args[0][0]).toEqual(1); // Verify initial props are correct
 
 			// Then update component
 			render(<Example callback={spy} value={2}/>, container);
@@ -342,8 +342,8 @@ describe('FormElements', () => {
 			event.initEvent('change', true, true);
 			container.firstChild.dispatchEvent(event, true);
 
-			expect(spy.calledTwice).to.equal(true);
-			expect(spy.args[1][0]).to.equal(2); // Verify props have changed
+			expect(spy.calledTwice).toEqual(true);
+			expect(spy.args[1][0]).toEqual(2); // Verify props have changed
 		});
 	});
 
@@ -364,49 +364,49 @@ describe('FormElements', () => {
 
 		it('Should set checked on render', () => {
 			render(<CheckBox checked={true}/>, container);
-			expect(container.querySelector('input').checked).to.equal(true);
+			expect(container.querySelector('input').checked).toEqual(true);
 		});
 
 		it('Should set checked on render #2', () => {
 			render(<CheckBox checked={false}/>, container);
-			expect(container.querySelector('input').checked).to.equal(false);
+			expect(container.querySelector('input').checked).toEqual(false);
 		});
 
 		it('Should set checked on render #3', () => {
 			render(<CheckBox />, container);
-			expect(container.querySelector('input').checked).to.equal(false);
+			expect(container.querySelector('input').checked).toEqual(false);
 		});
 
 		it('Should override changed value on next render', () => {
 			render(<CheckBox checked={false}/>, container);
 			let input = container.querySelector('input');
-			expect(input.checked).to.equal(false);
+			expect(input.checked).toEqual(false);
 			input.checked = false; // Simulate user clicking checkbox twice
 			render(<CheckBox checked={true}/>, container);
 			input = container.querySelector('input');
-			expect(input.checked).to.equal(true);
+			expect(input.checked).toEqual(true);
 		});
 
 		it('Should override changed value on next render even when value is same as on prev render', () => {
 			render(<CheckBox checked={false}/>, container);
 			let input = container.querySelector('input');
-			expect(input.checked).to.equal(false);
+			expect(input.checked).toEqual(false);
 			input.checked = true; // Simulate user clicking checkbox
-			expect(input.checked).to.equal(true);
+			expect(input.checked).toEqual(true);
 			render(<CheckBox checked={false}/>, container);
 			input = container.querySelector('input');
-			expect(input.checked).to.equal(false);
+			expect(input.checked).toEqual(false);
 		});
 
 		it('Should override changed value on next render even when value is same as on prev render #1', () => {
 			render(<CheckBox checked={true}/>, container);
 			let input = container.querySelector('input');
-			expect(input.checked).to.equal(true);
+			expect(input.checked).toEqual(true);
 			input.checked = false; // Simulate user clicking checkbox
-			expect(input.checked).to.equal(false);
+			expect(input.checked).toEqual(false);
 			render(<CheckBox checked={true}/>, container);
 			input = container.querySelector('input');
-			expect(input.checked).to.equal(true);
+			expect(input.checked).toEqual(true);
 		});
 	});
 
@@ -434,23 +434,23 @@ describe('FormElements', () => {
 			it('Should pre select option by value', () => {
 				render(<SelectList value="B"/>, container);
 				const selectList = container.querySelector('select');
-				expect(selectList.childNodes[ 0 ].selected).to.equal(false);
-				expect(selectList.childNodes[ 1 ].selected).to.equal(true);
-				expect(selectList.childNodes[ 2 ].selected).to.equal(false);
+				expect(selectList.childNodes[ 0 ].selected).toEqual(false);
+				expect(selectList.childNodes[ 1 ].selected).toEqual(true);
+				expect(selectList.childNodes[ 2 ].selected).toEqual(false);
 			});
 
 			it('Should change value based on value property', () => {
 				render(<SelectList value="B"/>, container);
 				let selectList = container.querySelector('select');
-				expect(selectList.childNodes[ 0 ].selected).to.equal(false);
-				expect(selectList.childNodes[ 1 ].selected).to.equal(true);
-				expect(selectList.childNodes[ 2 ].selected).to.equal(false);
+				expect(selectList.childNodes[ 0 ].selected).toEqual(false);
+				expect(selectList.childNodes[ 1 ].selected).toEqual(true);
+				expect(selectList.childNodes[ 2 ].selected).toEqual(false);
 
 				render(<SelectList value="C"/>, container);
 				selectList = container.querySelector('select');
-				expect(selectList.childNodes[ 0 ].selected).to.equal(false);
-				expect(selectList.childNodes[ 1 ].selected).to.equal(false);
-				expect(selectList.childNodes[ 2 ].selected).to.equal(true);
+				expect(selectList.childNodes[ 0 ].selected).toEqual(false);
+				expect(selectList.childNodes[ 1 ].selected).toEqual(false);
+				expect(selectList.childNodes[ 2 ].selected).toEqual(true);
 			});
 		});
 
@@ -492,16 +492,16 @@ describe('FormElements', () => {
 			it('Should pre select option by value on update', (done) => {
 				render(<SelectList />, container);
 				let selectList = container.querySelector('select');
-				expect(selectList.childNodes[ 0 ].selected).to.equal(true);
-				expect(selectList.childNodes[ 1 ].selected).to.equal(false);
-				expect(selectList.childNodes[ 2 ].selected).to.equal(false);
+				expect(selectList.childNodes[ 0 ].selected).toEqual(true);
+				expect(selectList.childNodes[ 1 ].selected).toEqual(false);
+				expect(selectList.childNodes[ 2 ].selected).toEqual(false);
 
 				updater({ value: 'B' });
 				setTimeout(() => {
 					selectList = container.querySelector('select');
-					expect(selectList.childNodes[ 0 ].selected).to.equal(false);
-					expect(selectList.childNodes[ 1 ].selected).to.equal(true);
-					expect(selectList.childNodes[ 2 ].selected).to.equal(false);
+					expect(selectList.childNodes[ 0 ].selected).toEqual(false);
+					expect(selectList.childNodes[ 1 ].selected).toEqual(true);
+					expect(selectList.childNodes[ 2 ].selected).toEqual(false);
 					done();
 				}, 10);
 			});
@@ -527,7 +527,7 @@ describe('FormElements', () => {
 				}
 				render(<TestInputRange />, container);
 
-				expect(container.firstChild.value).to.equal('260');
+				expect(container.firstChild.value).toEqual('260');
 			});
 		});
 
@@ -540,8 +540,8 @@ describe('FormElements', () => {
 					</select>
 				), container);
 
-				expect(container.firstChild.children[0].selected).to.equal(false);
-				expect(container.firstChild.children[1].selected).to.equal(true);
+				expect(container.firstChild.children[0].selected).toEqual(false);
+				expect(container.firstChild.children[1].selected).toEqual(true);
 			});
 
 			it('should render specified default selected option', () => {
@@ -552,8 +552,8 @@ describe('FormElements', () => {
 					</select>
 				</div>, container);
 
-				expect(container.querySelector('select').children[ 0 ].selected).to.eql(false);
-				expect(container.querySelector('select').children[ 1 ].selected).to.eql(true);
+				expect(container.querySelector('select').children[ 0 ].selected).toEqual(false);
+				expect(container.querySelector('select').children[ 1 ].selected).toEqual(true);
 			});
 		});
 	});

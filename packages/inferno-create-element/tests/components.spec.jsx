@@ -1,7 +1,7 @@
 
 import { render } from 'inferno';
 import Component from 'inferno-component';
-import createElement from '../dist-es';
+import createElement from 'inferno-create-element';
 import { assert, spy } from 'sinon';
 import { innerHTML } from 'inferno-utils';
 
@@ -48,7 +48,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render">The title is abc</span></div></div>')
 		);
 
@@ -58,7 +58,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render">The title is abc</span></div></div>')
 		);
 
@@ -71,7 +71,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render2">The title is abc</span></div></div>')
 		);
 	});
@@ -98,12 +98,12 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><label><input>The title is abc</label></div></div>')
 		);
 		expect(
 			container.querySelector('input').checked
-		).to.equal(
+		).toEqual(
 			true
 		);
 
@@ -114,12 +114,12 @@ describe('Components (JSX)', () => {
 		), container);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><label><input>The title is 123</label></div></div>')
 		);
 		expect(
 			container.querySelector('input').checked
-		).to.equal(
+		).toEqual(
 			false
 		);
 
@@ -140,7 +140,7 @@ describe('Components (JSX)', () => {
 		), container);
 		expect(
 			container.querySelector('input').checked
-		).to.equal(
+		).toEqual(
 			true
 		);
 	});
@@ -157,7 +157,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render">The title is abc</span></div></div>')
 		);
 
@@ -176,7 +176,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render">The title is Hello, World!</span></div></div>')
 		);
 
@@ -189,7 +189,7 @@ describe('Components (JSX)', () => {
 		);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span>The title is 123</span></div></div>')
 		);
 		render((
@@ -201,7 +201,7 @@ describe('Components (JSX)', () => {
 		);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span>The title is </span></div></div>')
 		);
 
@@ -213,7 +213,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span>The title is </span></div></div>')
 		);
 
@@ -225,7 +225,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span>The title is abc</span></div></div>')
 		);
 
@@ -236,7 +236,7 @@ describe('Components (JSX)', () => {
 		), container);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-update">The title is 123</span></div></div>')
 		);
 	});
@@ -247,20 +247,20 @@ describe('Components (JSX)', () => {
 			<BasicComponent1 title="abc" name="basic-render"/>
 		), container);
 
-		expect(container.firstChild.getAttribute('class')).to.equal('basic');
+		expect(container.firstChild.getAttribute('class')).toEqual('basic');
 
 		render((
 			<BasicComponent1 title="abc" name="basic-render"/>
 		), container);
 
-		expect(container.firstChild.getAttribute('class')).to.equal('basic');
+		expect(container.firstChild.getAttribute('class')).toEqual('basic');
 
 		render((
 			<BasicComponent1 title="123" name="basic-update"/>
 		), container);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div class="basic"><span class="basic-update">The title is 123</span></div>')
 		);
 	});
@@ -288,7 +288,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render">The title is abc</span><span>Im a child</span></div></div>')
 		);
 
@@ -301,7 +301,7 @@ describe('Components (JSX)', () => {
 		), container);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-update">The title is 123</span><span>Im a child</span></div></div>')
 		);
 	});
@@ -317,7 +317,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render">The title is component 1</span></div>'
 				+ '<div class="basic"><span class="basic-render">The title is component 2</span></div></div>')
 		);
@@ -329,7 +329,7 @@ describe('Components (JSX)', () => {
 		), container);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div><div class="basic"><span class="basic-render">The title is component 1</span></div></div>')
 		);
 	});
@@ -352,7 +352,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div style="color: red; padding-left: 10px;"><span style="color: red; padding-left: 10px;">The title is styled!</span></div>')
 		);
 
@@ -366,7 +366,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div style="color: blue; margin-bottom: 20px;"><span style="color: blue; margin-bottom: 20px;">The title is styled (again)!</span></div>')
 		);
 	});
@@ -379,7 +379,7 @@ describe('Components (JSX)', () => {
 
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			innerHTML('<div style="color: red; padding-top: 20px;"><span style="color: red; padding-top: 20px;">The title is styled!</span></div>')
 		);
 
@@ -388,8 +388,8 @@ describe('Components (JSX)', () => {
 		), container);
 
 		expect(container.firstChild.getAttribute('style')).to.be.oneOf([ null, '' ]);
-		expect(container.firstChild.tagName).to.eql('DIV');
-		expect(container.firstChild.firstChild.innerHTML).to.eql('The title is styles are removed!');
+		expect(container.firstChild.tagName).toEqual('DIV');
+		expect(container.firstChild.firstChild.innerHTML).toEqual('The title is styles are removed!');
 	});
 
 	class SuperComponent extends Component {
@@ -421,7 +421,7 @@ describe('Components (JSX)', () => {
 		render(<SuperComponent />, container);
 		expect(
 			container.innerHTML
-		).to.equal(
+		).toEqual(
 			'<ul class="login-organizationlist"><li>test1</li><li>test2</li><li>test3</li><li>test4</li><li>test5</li><li>test6</li></ul>'
 		);
 	});
@@ -456,9 +456,9 @@ describe('Components (JSX)', () => {
 
 		render(element, container);
 		setTimeout(() => {
-			expect(container.firstChild).not.to.equal(null);
-			expect(container.firstChild.tagName).to.equal(expectedTag);
-			expect(container.firstChild.className).to.equal(expectedClassName);
+			expect(container.firstChild).not.toEqual(null);
+			expect(container.firstChild.tagName).toEqual(expectedTag);
+			expect(container.firstChild.className).toEqual(expectedClassName);
 			callback();
 		}, 30);
 	}
@@ -466,7 +466,7 @@ describe('Components (JSX)', () => {
 	it('should preserve the name of the class for use in error messages', function () {
 		class Foo extends Component {
 		}
-		expect(Foo.name).to.equal('Foo');
+		expect(Foo.name).toEqual('Foo');
 	});
 
 	it('should only render once when setting state in componentWillMount', function (done) {
@@ -488,7 +488,7 @@ describe('Components (JSX)', () => {
 		}
 		test(<Foo initialValue={null}/>, 'SPAN', 'bar', () => {
 			test(<Foo initialValue="foo"/>, 'SPAN', 'bar', () => {
-				expect(renderCount).to.equal(2);
+				expect(renderCount).toEqual(2);
 				done();
 			});
 		});
@@ -530,10 +530,10 @@ describe('Components (JSX)', () => {
 			}
 		}
 		test(<Foo initialValue="foo"/>, 'DIV', 'foo', () => {
-			expect(renderedName).to.equal('foo');
+			expect(renderedName).toEqual('foo');
 			attachedListener();
 			setTimeout(() => {
-				expect(renderedName).to.equal('bar');
+				expect(renderedName).toEqual('bar');
 				done();
 			}, 10);
 		});
@@ -562,7 +562,7 @@ describe('Components (JSX)', () => {
 		}
 		test(<Foo initialValue="foo"/>, 'DIV', 'foo', function () {
 			attachedListener();
-			expect(renderedName).to.equal('bar');
+			expect(renderedName).toEqual('bar');
 			done();
 		});
 	});
@@ -614,7 +614,7 @@ describe('Components (JSX)', () => {
 
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><div class="my-component"><h1>Saab 0</h1><button type="button">Increment</button></div><div class="my-component"><h1>Volvo 0</h1><button type="button">Increment</button></div><div class="my-component"><h1>BMW 0</h1><button type="button">Increment</button></div></div>')
 			);
 		});
@@ -629,7 +629,7 @@ describe('Components (JSX)', () => {
 			requestAnimationFrame(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><div class="my-component"><h1>Saab 1</h1><button type="button">Increment</button></div><div class="my-component"><h1>Volvo 1</h1><button type="button">Increment</button></div><div class="my-component"><h1>BMW 1</h1><button type="button">Increment</button></div></div>')
 				);
 				done();
@@ -677,7 +677,7 @@ describe('Components (JSX)', () => {
 
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div class="login-view bg-visma"><button>TOGGLE</button><br><h1>Not so cool</h1></div>')
 			);
 		});
@@ -690,7 +690,7 @@ describe('Components (JSX)', () => {
 			requestAnimationFrame(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div class="login-view bg-visma"><button>TOGGLE</button><br><h1>This is cool!</h1></div>')
 				);
 				done();
@@ -747,7 +747,7 @@ describe('Components (JSX)', () => {
 
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><h1>Hello folks</h1><button>toggle</button></div>')
 			);
 		});
@@ -760,7 +760,7 @@ describe('Components (JSX)', () => {
 			requestAnimationFrame(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><p>Kalle</p><button>toggle</button></div>')
 				);
 				done();
@@ -809,7 +809,7 @@ describe('Components (JSX)', () => {
 			render(<Repeater value={value}/>, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><div>0</div><div>0</div><div>0</div></div>')
 			);
 
@@ -817,7 +817,7 @@ describe('Components (JSX)', () => {
 			render(<Repeater value={value}/>, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><div>1</div><div>1</div><div>1</div></div>')
 			);
 
@@ -825,7 +825,7 @@ describe('Components (JSX)', () => {
 			render(<Repeater value={value}/>, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><div>2</div><div>2</div><div>2</div></div>')
 			);
 		});
@@ -881,7 +881,7 @@ describe('Components (JSX)', () => {
 			render(<TestingProps />, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><div><div><h1>Okdokfwoe</h1><p>odkodwq</p></div></div></div>')
 			);
 		});
@@ -935,7 +935,7 @@ describe('Components (JSX)', () => {
 			requestAnimationFrame(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div>isok=true<div><span>a</span><span>b</span></div></div>')
 				);
 				done();
@@ -998,7 +998,7 @@ describe('Components (JSX)', () => {
 			setTimeout(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><div><span>a</span></div></div>')
 				);
 				done();
@@ -1011,16 +1011,16 @@ describe('Components (JSX)', () => {
 	it('should render stateless component', () => {
 
 		render(<StatelessComponent2 name="A"/>, container);
-		expect(container.textContent).to.equal('A');
+		expect(container.textContent).toEqual('A');
 	});
 
 	it('should unmount stateless component', function () {
 
 		render(<StatelessComponent2 name="A"/>, container);
-		expect(container.textContent).to.equal('A');
+		expect(container.textContent).toEqual('A');
 
 		render(null, container);
-		expect(container.textContent).to.equal('');
+		expect(container.textContent).toEqual('');
 	});
 
 	it('should support module pattern components', function () {
@@ -1030,7 +1030,7 @@ describe('Components (JSX)', () => {
 
 		render(<Child test="test"/>, container);
 
-		expect(container.textContent).to.equal('test');
+		expect(container.textContent).toEqual('test');
 	});
 
 	describe('should render a component with a conditional list that changes upon toggle', () => {
@@ -1075,7 +1075,7 @@ describe('Components (JSX)', () => {
 			render(<BuggyRender />, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><button>Empty</button><ul><li>No cars!</li></ul></div>')
 			);
 		});
@@ -1088,7 +1088,7 @@ describe('Components (JSX)', () => {
 			setTimeout(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><button>Empty</button><ul><li>BMW</li><li>Volvo</li><li>Saab</li></ul></div>')
 				);
 				done();
@@ -1131,7 +1131,7 @@ describe('Components (JSX)', () => {
 			render(<ChangeChildrenCount />, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><button>1</button><div>0</div><div>1</div><div>2</div><div>3</div></div>')
 			);
 		});
@@ -1144,7 +1144,7 @@ describe('Components (JSX)', () => {
 			setTimeout(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><button>1</button><div>0</div></div>')
 				);
 				done();
@@ -1194,7 +1194,7 @@ describe('Components (JSX)', () => {
 			render(<First />, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><button>Increase! 0</button><p>0-42</p></div>')
 			);
 		});
@@ -1207,7 +1207,7 @@ describe('Components (JSX)', () => {
 			setTimeout(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><button>Increase! 1</button><p>1-42</p></div>')
 				);
 				done();
@@ -1252,7 +1252,7 @@ describe('Components (JSX)', () => {
 			render(<First />, container);
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><button>Increase! 0</button><p>0</p></div>')
 			);
 		});
@@ -1265,7 +1265,7 @@ describe('Components (JSX)', () => {
 			setTimeout(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><button>Increase! 1</button><p>1</p></div>')
 				);
 				done();
@@ -1323,7 +1323,7 @@ describe('Components (JSX)', () => {
 
 			expect(
 				container.innerHTML
-			).to.equal(
+			).toEqual(
 				innerHTML('<div><div><button>guy1 0</button><p>0</p></div></div><div><div><button>guy2 0</button><p>0</p></div></div>')
 			);
 		});
@@ -1338,7 +1338,7 @@ describe('Components (JSX)', () => {
 			setTimeout(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><div><button>guy1 1</button><p>1</p></div></div><div><div><button>guy2 0</button><p>0</p></div></div>')
 				);
 				done();
@@ -1355,7 +1355,7 @@ describe('Components (JSX)', () => {
 			setTimeout(() => {
 				expect(
 					container.innerHTML
-				).to.equal(
+				).toEqual(
 					innerHTML('<div><div><button>guy1 0</button><p>0</p></div></div><div><div><button>guy2 1</button><p>1</p></div></div>')
 				);
 				done();
@@ -1428,13 +1428,13 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<Parent />, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div><p>parent</p><div>A</div></div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div><p>parent</p><div>A</div></div>'));
 			updateChild();
 			setTimeout(() => {
-				expect(container.innerHTML).to.equal(innerHTML('<div><p>parent</p><div>B</div></div>'));
+				expect(container.innerHTML).toEqual(innerHTML('<div><p>parent</p><div>B</div></div>'));
 				updateParent();
 				setTimeout(() => {
-					expect(container.innerHTML).to.equal(innerHTML('<div><p>parent</p><div>Y</div></div>'));
+					expect(container.innerHTML).toEqual(innerHTML('<div><p>parent</p><div>Y</div></div>'));
 					done();
 				}, 10);
 			}, 10);
@@ -1483,7 +1483,7 @@ describe('Components (JSX)', () => {
 			];
 
 			render(<List data={data}/>, container);
-			expect(container.innerHTML).to.equal(innerHTML('<ul><li><span>Foo</span></li><li><ul><li><span>a</span></li><li><span>b</span></li></ul></li></ul>'));
+			expect(container.innerHTML).toEqual(innerHTML('<ul><li><span>Foo</span></li><li><ul><li><span>a</span></li><li><span>b</span></li></ul></li></ul>'));
 		});
 
 		it('Should be possible to pass props recursively AT BEGINNING (JSX plugin change required)', () => {
@@ -1527,7 +1527,7 @@ describe('Components (JSX)', () => {
 			];
 
 			render(<List data={data}/>, container);
-			expect(container.innerHTML).to.equal(innerHTML('<ul><li><span>Foo</span></li><li><ul><li><span>a</span></li><li><span>b</span></li></ul></li></ul>'));
+			expect(container.innerHTML).toEqual(innerHTML('<ul><li><span>Foo</span></li><li><ul><li><span>a</span></li><li><span>b</span></li></ul></li></ul>'));
 		});
 	});
 
@@ -1634,14 +1634,14 @@ describe('Components (JSX)', () => {
 
 		render(<Container />, container);
 
-		expect(btnFlag).to.equal(false);
-		expect(containerFlag).to.equal(false);
+		expect(btnFlag).toEqual(false);
+		expect(containerFlag).toEqual(false);
 
 		const spans = Array.prototype.slice.call(container.querySelectorAll('span'));
 		spans.forEach((span) => span.click());
 
-		expect(btnFlag).to.equal(true);
-		expect(containerFlag).to.equal(true);
+		expect(btnFlag).toEqual(true);
+		expect(containerFlag).toEqual(true);
 		done();
 	});
 
@@ -1680,14 +1680,14 @@ describe('Components (JSX)', () => {
 
 		render(<Container />, container);
 
-		expect(btnFlag).to.equal(false);
-		expect(containerFlag).to.equal(false);
+		expect(btnFlag).toEqual(false);
+		expect(containerFlag).toEqual(false);
 
 		const spans = Array.prototype.slice.call(container.querySelectorAll('span'));
 		spans.forEach((span) => span.click());
 
-		expect(btnFlag).to.equal(true);
-		expect(containerFlag).to.equal(false);
+		expect(btnFlag).toEqual(true);
+		expect(containerFlag).toEqual(false);
 		done();
 	});
 
@@ -1716,7 +1716,7 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<C />, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div></div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div></div>'));
 		});
 	});
 
@@ -1751,13 +1751,13 @@ describe('Components (JSX)', () => {
 
 		it('should render the div correctly', () => {
 			render(<Foo />, container);
-			expect(container.firstChild.innerHTML).to.equal('Hello world');
+			expect(container.firstChild.innerHTML).toEqual('Hello world');
 		});
 
 		it('should update correctly', () => {
 			render(<Foo />, container);
 			render(<Foo />, container);
-			expect(container.firstChild.innerHTML).to.equal('Hello world');
+			expect(container.firstChild.innerHTML).toEqual('Hello world');
 		});
 
 		it('should update correctly via forceUpdate', () => {
@@ -1767,7 +1767,7 @@ describe('Components (JSX)', () => {
 			render(<Foo />, container);
 			forceUpdate2();
 			forceUpdate();
-			expect(container.firstChild.innerHTML).to.equal('Hello world');
+			expect(container.firstChild.innerHTML).toEqual('Hello world');
 		});
 	});
 
@@ -1814,12 +1814,12 @@ describe('Components (JSX)', () => {
 		}
 
 		render(<Bar />, container);
-		expect(container.innerHTML).to.equal(innerHTML('<div>Hello world</div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div>Hello world</div>'));
 		notCalled(sinonSpy);
 
 		updater();
 		setTimeout(() => {
-			expect(container.innerHTML).to.equal(innerHTML('<div><div>Hello world2</div></div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div><div>Hello world2</div></div>'));
 			calledOnce(sinonSpy);
 			done();
 		}, 10);
@@ -1857,22 +1857,22 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<Bar />, container);
-			expect(container.innerHTML).to.equal('');
+			expect(container.innerHTML).toEqual('');
 
 			updater();
-			expect(container.innerHTML).to.equal(innerHTML('<div>Rendered!</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>Rendered!</div>'));
 
 			updater();
-			expect(container.innerHTML).to.equal('');
+			expect(container.innerHTML).toEqual('');
 
 			updater();
-			expect(container.innerHTML).to.equal(innerHTML('<div>Rendered!</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>Rendered!</div>'));
 
 			updater();
-			expect(container.innerHTML).to.equal('');
+			expect(container.innerHTML).toEqual('');
 
 			updater();
-			expect(container.innerHTML).to.equal(innerHTML('<div>Rendered!</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>Rendered!</div>'));
 		});
 	});
 
@@ -1908,16 +1908,16 @@ describe('Components (JSX)', () => {
 		}
 
 		render(<Bar />, container);
-		expect(container.innerHTML).to.equal(innerHTML('<div><span>span</span><div>div</div></div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div><span>span</span><div>div</div></div>'));
 
 		updater();
-		expect(container.innerHTML).to.equal(innerHTML('<div>text<div>div</div></div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div>text<div>div</div></div>'));
 
 		updater();
-		expect(container.innerHTML).to.equal(innerHTML('<div><span>span</span><div>div</div></div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div><span>span</span><div>div</div></div>'));
 
 		updater();
-		expect(container.innerHTML).to.equal(innerHTML('<div>text<div>div</div></div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div>text<div>div</div></div>'));
 	});
 
 	it('Should be able to swap between text node and html node #2', (done) => {
@@ -1952,17 +1952,17 @@ describe('Components (JSX)', () => {
 		}
 
 		render(<Bar />, container);
-		expect(container.innerHTML).to.equal(innerHTML('<div><div>div</div></div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div><div>div</div></div>'));
 
 		updater();
 		setTimeout(() => {
-			expect(container.innerHTML).to.equal(innerHTML('<div><span>span</span><div>div</div></div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div><span>span</span><div>div</div></div>'));
 			updater();
 			setTimeout(() => {
-				expect(container.innerHTML).to.equal(innerHTML('<div><div>div</div></div>'));
+				expect(container.innerHTML).toEqual(innerHTML('<div><div>div</div></div>'));
 				updater();
 				setTimeout(() => {
-					expect(container.innerHTML).to.equal(innerHTML('<div><span>span</span><div>div</div></div>'));
+					expect(container.innerHTML).toEqual(innerHTML('<div><span>span</span><div>div</div></div>'));
 					done();
 				}, 10);
 			}, 10);
@@ -1984,13 +1984,13 @@ describe('Components (JSX)', () => {
 
 		it('should correctly render once but never again', () => {
 			render(<Test foo="bar"/>, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div>bar</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>bar</div>'));
 			render(<Test foo="yar"/>, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div>bar</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>bar</div>'));
 			instance.setState({ foo: 'woo' });
-			expect(container.innerHTML).to.equal(innerHTML('<div>bar</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>bar</div>'));
 			render(null, container);
-			expect(container.innerHTML).to.equal('');
+			expect(container.innerHTML).toEqual('');
 		});
 	});
 	describe('handling of different primatives', () => {
@@ -2004,9 +2004,9 @@ describe('Components (JSX)', () => {
 			);
 
 			render(<Todo todo={{ done: false }}/>, container);
-			expect(container.innerHTML).to.equal('<tr><td></td><td></td><td></td></tr>');
+			expect(container.innerHTML).toEqual('<tr><td></td><td></td><td></td></tr>');
 			render(<Todo todo={{ done: true }}/>, container);
-			expect(container.innerHTML).to.equal('<tr><td></td><td></td><td></td></tr>');
+			expect(container.innerHTML).toEqual('<tr><td></td><td></td><td></td></tr>');
 		});
 	});
 
@@ -2040,7 +2040,7 @@ describe('Components (JSX)', () => {
 				innerHTML(
 					container.innerHTML
 				)
-			).to.equal(
+			).toEqual(
 				innerHTML(
 					'<input class="foo" id="test">'
 				)
@@ -2108,14 +2108,14 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<Tester />, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
-			expect(unMountCalled).to.eql(false);
+			expect(container.innerHTML).toEqual(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
+			expect(unMountCalled).toEqual(false);
 			change1();
-			expect(unMountCalled).to.eql(false);
-			expect(container.innerHTML).to.equal(innerHTML('<div><div><span>foo1</span><span>foo2</span><span>foo3</span><span>foo4</span></div></div>'));
+			expect(unMountCalled).toEqual(false);
+			expect(container.innerHTML).toEqual(innerHTML('<div><div><span>foo1</span><span>foo2</span><span>foo3</span><span>foo4</span></div></div>'));
 			change1();
-			expect(unMountCalled).to.eql(true);
-			expect(container.innerHTML).to.equal(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
+			expect(unMountCalled).toEqual(true);
+			expect(container.innerHTML).toEqual(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
 		});
 
 		it('Should be able to swap stateless component to DOM list when doing setState', () => {
@@ -2164,11 +2164,11 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<Tester />, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
 			change1();
-			expect(container.innerHTML).to.equal(innerHTML('<div><div><span>foo1</span><span>foo2</span><span>foo3</span><span>foo4</span></div></div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div><div><span>foo1</span><span>foo2</span><span>foo3</span><span>foo4</span></div></div>'));
 			change1();
-			expect(container.innerHTML).to.equal(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div><div class="login-container"><h1>foo</h1></div></div>'));
 		});
 	});
 
@@ -2194,10 +2194,10 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<Comp1 />, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div>0</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>0</div>'));
 			render(<Comp1 />, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div>1</div>'));
-			expect(renderCount).to.equal(2);
+			expect(container.innerHTML).toEqual(innerHTML('<div>1</div>'));
+			expect(renderCount).toEqual(2);
 		});
 	});
 
@@ -2215,13 +2215,13 @@ describe('Components (JSX)', () => {
 		}
 
 		render(<div><Comp /></div>, container);
-		expect(container.innerHTML).to.equal(innerHTML('<div><div></div></div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div><div></div></div>'));
 		render(<div><Comp2 /></div>, container);
-		expect(container.innerHTML).to.equal(innerHTML('<div><span></span></div>'));
+		expect(container.innerHTML).toEqual(innerHTML('<div><span></span></div>'));
 		render(<span><Comp /></span>, container);
-		expect(container.innerHTML).to.equal(innerHTML('<span><div></div></span>'));
+		expect(container.innerHTML).toEqual(innerHTML('<span><div></div></span>'));
 		render(createElement('span', null, <Comp3 />), container);
-		expect(container.innerHTML).to.equal(innerHTML('<span><div></div></span>'));
+		expect(container.innerHTML).toEqual(innerHTML('<span><div></div></span>'));
 	});
 
 	describe('components should be able to use defaultProps', () => {
@@ -2258,33 +2258,33 @@ describe('Components (JSX)', () => {
 
 		it('should mount component with defaultProps', () => {
 			render(<Comp1 c="C"/>, container);
-			expect(innerHTML(container.innerHTML)).to.equal(innerHTML('<div class="A" id="B">Hello C!</div>'));
+			expect(innerHTML(container.innerHTML)).toEqual(innerHTML('<div class="A" id="B">Hello C!</div>'));
 		});
 
 		it('should mount child component with its defaultProps', () => {
 			const Parent = (props) => <div>{props.children.props.a}</div>;
 			render(<Parent><Comp1 c="C"/></Parent>, container);
-			expect(innerHTML(container.innerHTML)).to.equal(innerHTML('<div>A</div>'));
+			expect(innerHTML(container.innerHTML)).toEqual(innerHTML('<div>A</div>'));
 		});
 
 		it('should patch component with defaultProps', () => {
 			render(<Comp1 c="C"/>, container);
 			render(<Comp1 c="C2"/>, container);
-			expect(innerHTML(container.innerHTML)).to.equal(innerHTML('<div class="A" id="B">Hello C2!</div>'));
+			expect(innerHTML(container.innerHTML)).toEqual(innerHTML('<div class="A" id="B">Hello C2!</div>'));
 		});
 		it('should patch component with defaultProps #2', () => {
 			render(<Comp1 c="C"/>, container);
 			render(<Comp2 c="C1"/>, container);
-			expect(innerHTML(container.innerHTML)).to.equal(innerHTML('<div class="aye" id="bee">Hello C1!</div>'));
+			expect(innerHTML(container.innerHTML)).toEqual(innerHTML('<div class="aye" id="bee">Hello C1!</div>'));
 			render(<Comp1 c="C2"/>, container);
-			expect(innerHTML(container.innerHTML)).to.equal(innerHTML('<div class="A" id="B">Hello C2!</div>'));
+			expect(innerHTML(container.innerHTML)).toEqual(innerHTML('<div class="A" id="B">Hello C2!</div>'));
 		});
 
 		it('should as per React: Have childrens defaultProps set before children is mounted', () => {
 			let childrenPropertABeforeMount = 'A';
 			class Parent extends Component {
 				render() {
-					expect(this.props.children.props.a).to.eql(childrenPropertABeforeMount);
+					expect(this.props.children.props.a).toEqual(childrenPropertABeforeMount);
 
 					return (
 						<div>
@@ -2300,7 +2300,7 @@ describe('Components (JSX)', () => {
 				</Parent>, container
 			);
 
-			expect(innerHTML(container.innerHTML)).to.equal(innerHTML('<div><div class="A" id="B">Hello !</div></div>'));
+			expect(innerHTML(container.innerHTML)).toEqual(innerHTML('<div><div class="A" id="B">Hello !</div></div>'));
 
 			childrenPropertABeforeMount = 'ABCD';
 
@@ -2310,7 +2310,7 @@ describe('Components (JSX)', () => {
 				</Parent>, container
 			);
 
-			expect(innerHTML(container.innerHTML)).to.equal(innerHTML('<div><div class="ABCD" id="B">Hello !</div></div>'));
+			expect(innerHTML(container.innerHTML)).toEqual(innerHTML('<div><div class="ABCD" id="B">Hello !</div></div>'));
 		});
 	});
 
@@ -2339,10 +2339,10 @@ describe('Components (JSX)', () => {
 
 		it('the state should update properly', (done) => {
 			render(<Comp1 />, container);
-			expect(container.innerHTML).to.equal(innerHTML('<div>yar</div>'));
+			expect(container.innerHTML).toEqual(innerHTML('<div>yar</div>'));
 			reference();
 			setTimeout(() => {
-				expect(container.innerHTML).to.equal(innerHTML('<div>bar</div>'));
+				expect(container.innerHTML).toEqual(innerHTML('<div>bar</div>'));
 				done();
 			}, 10);
 		});
@@ -2365,9 +2365,9 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<Comp1 />, container);
-			expect(container.innerHTML).to.eql('<div>rendered</div>');
+			expect(container.innerHTML).toEqual('<div>rendered</div>');
 			render(<Comp1 foo={true}/>, container);
-			expect(container.innerHTML).to.eql('');
+			expect(container.innerHTML).toEqual('');
 		});
 
 		it('Should not crash when invalid node returned - stateless', () => {
@@ -2380,9 +2380,9 @@ describe('Components (JSX)', () => {
 			};
 
 			render(<Comp1 />, container);
-			expect(container.innerHTML).to.eql('<div>rendered</div>');
+			expect(container.innerHTML).toEqual('<div>rendered</div>');
 			render(<Comp1 foo={true}/>, container);
-			expect(container.innerHTML).to.eql('');
+			expect(container.innerHTML).toEqual('');
 		});
 
 		it('Should throw when array returned - statefull', () => {
@@ -2401,14 +2401,14 @@ describe('Components (JSX)', () => {
 			}
 
 			render(<Comp1 />, container);
-			expect(container.innerHTML).to.eql('<div>rendered</div>');
+			expect(container.innerHTML).toEqual('<div>rendered</div>');
 			try {
 				render(<Comp1 foo={true}/>, container);
 			} catch (e) {
-				expect(e.message).to.eql('Inferno Error: a valid Inferno VNode (or null) must be returned from a component render. You may have returned an array or an invalid object.');
+				expect(e.message).toEqual('Inferno Error: a valid Inferno VNode (or null) must be returned from a component render. You may have returned an array or an invalid object.');
 			}
 
-			expect(container.innerHTML).to.eql('<div>rendered</div>');
+			expect(container.innerHTML).toEqual('<div>rendered</div>');
 		});
 
 		it('Should throw when array returned - stateless', () => {
@@ -2421,14 +2421,14 @@ describe('Components (JSX)', () => {
 			};
 
 			render(<Comp1 />, container);
-			expect(container.innerHTML).to.eql('<div>rendered</div>');
+			expect(container.innerHTML).toEqual('<div>rendered</div>');
 			try {
 				render(<Comp1 foo={true}/>, container);
 			} catch (e) {
-				expect(e.message).to.eql('Inferno Error: a valid Inferno VNode (or null) must be returned from a component render. You may have returned an array or an invalid object.');
+				expect(e.message).toEqual('Inferno Error: a valid Inferno VNode (or null) must be returned from a component render. You may have returned an array or an invalid object.');
 			}
 
-			expect(container.innerHTML).to.eql('<div>rendered</div>');
+			expect(container.innerHTML).toEqual('<div>rendered</div>');
 		});
 	});
 
@@ -2499,24 +2499,24 @@ describe('Components (JSX)', () => {
 		// this test is to replicate https://jsfiddle.net/localvoid/r070sgrq/2/
 		it('should correct swap rows', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
 			// click on "SPAN"
 			container.querySelector('span').click();
 			// "SPAN" should now be "DIV"
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>ROW</div><div>DIV</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>ROW</div><div>DIV</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
 			// click on "DIV"
 			div.click();
 			// "DIV" should now be "SPAN"
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>ROW</div><span>SPAN</span></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>ROW</div><span>SPAN</span></div></div>');
 		});
 	});
 
@@ -2591,24 +2591,24 @@ describe('Components (JSX)', () => {
 		// this test is to replicate https://jsfiddle.net/localvoid/r070sgrq/2/
 		it('should correct swap rows', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
 			// click on "SPAN"
 			container.querySelector('span').click();
 			// "SPAN" should now be "DIV"
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>ROW</div><div>DIV</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>ROW</div><div>DIV</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
 			// click on "DIV"
 			div.click();
 			// "DIV" should now be "SPAN"
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>ROW</div><span>SPAN</span></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>ROW</div><span>SPAN</span></div></div>');
 		});
 	});
 
@@ -2677,24 +2677,24 @@ describe('Components (JSX)', () => {
 		// this test is to replicate https://jsfiddle.net/localvoid/r070sgrq/2/
 		it('should correct swap rows', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
 			// click on "SPAN"
 			container.querySelector('span').click();
 			// "SPAN" should now be "DIV"
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>ROW</div><div>DIV</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>ROW</div><div>DIV</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>DIV</div><div>ROW</div></div></div>');
 			// click on "DIV"
 			div.click();
 			// "DIV" should now be "SPAN"
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>ROW</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			// expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>ROW</div><span>SPAN</span></div></div>');
+			// expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>ROW</div><span>SPAN</span></div></div>');
 		});
 	});
 
@@ -2764,13 +2764,13 @@ describe('Components (JSX)', () => {
 
 		it('should correct swap rows', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>A</div><span>SPAN</span></div><div><div>A</div><span>SPAN</span></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>A</div><span>SPAN</span></div><div><div>A</div><span>SPAN</span></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
 		});
 	});
 
@@ -2842,13 +2842,13 @@ describe('Components (JSX)', () => {
 
 		it('should correct swap rows', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>A</div><span>SPAN</span></div><div><div>A</div><span>SPAN</span></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>A</div><span>SPAN</span></div><div><div>A</div><span>SPAN</span></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><span>SPAN</span><div>A</div></div><div><span>SPAN</span><div>A</div></div></div>');
 		});
 	});
 
@@ -2893,10 +2893,10 @@ describe('Components (JSX)', () => {
 
 		it('should replace keyed component if key changes', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Replace</button><div><div>1</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Replace</button><div><div>1</div></div></div>');
 			// click "Replace"
 			container.querySelector('button').click();
-			expect(container.innerHTML).to.eql('<div><button>Replace</button><div><div>2</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Replace</button><div><div>2</div></div></div>');
 		});
 	});
 
@@ -2934,7 +2934,7 @@ describe('Components (JSX)', () => {
 		// this test is to replicate https://jsfiddle.net/localvoid/fmznjwxv/
 		it('should correct swap rows', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>B</div><div>A</div></div><div><div>B</div><div>A</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>B</div><div>A</div></div><div><div>B</div><div>A</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
 		});
@@ -2978,7 +2978,7 @@ describe('Components (JSX)', () => {
 		// this test is to replicate https://jsfiddle.net/localvoid/fmznjwxv/
 		it('should correct swap rows', () => {
 			render(<Test />, container);
-			expect(container.innerHTML).to.eql('<div><button>Swap Rows</button><div><div>B</div><div>A</div></div><div><div>B</div><div>A</div></div></div>');
+			expect(container.innerHTML).toEqual('<div><button>Swap Rows</button><div><div>B</div><div>A</div></div><div><div>B</div><div>A</div></div></div>');
 			// click "SWAP ROWS"
 			container.querySelector('button').click();
 		});
@@ -3035,7 +3035,7 @@ describe('Components (JSX)', () => {
 
 			render(<Parent toggle={true}/>, container);
 
-			expect(container.innerHTML).to.eql('<div><span>bar</span><div><span style="color: blue;">foo</span></div></div>');
+			expect(container.innerHTML).toEqual('<div><span>bar</span><div><span style="color: blue;">foo</span></div></div>');
 
 			render(<Parent toggle={false}/>, container);
 
