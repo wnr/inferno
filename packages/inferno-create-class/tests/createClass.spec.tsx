@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+
 import { render } from 'inferno';
 import { innerHTML } from 'inferno-utils';
 import createClass from '../src';
