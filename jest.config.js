@@ -38,6 +38,7 @@ module.exports = {
 		'**/packages/*/tests/**/*.spec.ts?(x)'
 	],
 	'transform': {
-		'.(ts|tsx)': '<rootDir>/node_modules/ts-jest/preprocessor.js'
+		'^.+\\.jsx?$': 'babel-jest',
+		'^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js'
 	}
 };

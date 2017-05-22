@@ -1,6 +1,7 @@
 {
+  "compact": false,
   "presets": [
-    ["es2015"],
+    ["es2015", {"loose": true}],
     "stage-2"
   ],
   "plugins": [
@@ -8,5 +9,12 @@
     "transform-object-rest-spread",
     "babel-plugin-syntax-jsx",
     ["babel-plugin-inferno", {"imports": true}]
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "es2015"
+      ]
+    }
+  }
 }
