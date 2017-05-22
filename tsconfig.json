@@ -1,0 +1,34 @@
+{
+	"version": "2.2.1",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"inferno": ["packages/inferno/src"],
+			"inferno-component": ["packages/inferno-component/src"],
+			"inferno-shared": ["packages/inferno-shared/src"],
+			"inferno-vnode-flags": ["packages/inferno-vnode-flags/src"]
+		},
+		"allowSyntheticDefaultImports": true,
+		"target": "es6",
+		"module": "es6",
+		"allowJs": false,
+		"moduleResolution": "node",
+		"preserveConstEnums": true,
+		"declaration": true,
+		"outDir": "dist",
+		"sourceMap": false,
+		"lib": [
+			"es6",
+			"es7",
+			"dom"
+		],
+		"jsx": "preserve",
+		"noUnusedLocals": true,
+		"strictNullChecks": true,
+		"removeComments": false
+	},
+	"include": [
+		"packages/*/src/**/*",
+		"packages/*/tests/**/*"
+	]
+}
