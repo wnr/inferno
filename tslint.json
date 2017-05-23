@@ -16,7 +16,7 @@
 		"prefer-const": true,
 		"prefer-for-of": false,
 		"quotemark": [ true, "single", "jsx-double" ],
-		"trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+		"trailing-comma": [true],
 		"variable-name": false
 	},
 	"rules": {
@@ -41,7 +41,7 @@
 		"prefer-const": false, // TODO: Change this back
 		"prefer-for-of": false,
 		"quotemark": [ true, "single", "jsx-double" ],
-		"trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+		"trailing-comma": [true],
 		"variable-name": false
 	}
 }

@@ -34,3 +34,5 @@ test/data/result.json
 .fusebox
 .changelog
 .npm-debug.log*
+
+.rpt2_cache

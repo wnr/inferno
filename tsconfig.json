@@ -15,11 +15,10 @@
 		},
 		"allowSyntheticDefaultImports": true,
 		"target": "es6",
-		"module": "es6",
+		"module": "es2015",
 		"allowJs": false,
 		"moduleResolution": "node",
 		"preserveConstEnums": true,
-		"declaration": true,
 		"outDir": "dist",
 		"sourceMap": false,
 		"lib": [
@@ -33,7 +32,6 @@
 		"removeComments": false
 	},
 	"include": [
-		"packages/*/src/**/*",
-		"packages/*/tests/**/*"
+		"packages/*/src/**/*"
 	]
 }

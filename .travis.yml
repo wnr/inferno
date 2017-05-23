@@ -35,9 +35,17 @@ before_install:
   # Repo for newer Node.js versions
   - curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
+install:
+  - npm install
+
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+
+script:
+  - npm run topology
+  - npm test
+  - npm run build
 
 after_script:
   - npm run test:unit:publish

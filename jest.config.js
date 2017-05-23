@@ -36,7 +36,7 @@ module.exports = {
 		'<rootDir>/packages/inferno-vnode-flags'
 	],
 	setupFiles: [
-		'<rootDir>/scripts/test/requestAnimationFrame.ts'
+		'<rootDir>/scripts/jest/requestAnimationFrame.ts'
 	],
 	'testMatch': [
 		'**/packages/*/tests/**/*spec.js?(x)',

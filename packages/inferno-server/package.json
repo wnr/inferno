@@ -42,7 +42,8 @@
   "rollup": {
     "bundledDependencies": [
       "inferno-shared",
-      "inferno-vnode-flags"
+      "inferno-vnode-flags",
+      "stream"
     ],
     "moduleName": "Inferno.Server",
     "moduleGlobals": {
