@@ -1,6 +1,5 @@
-
+import { createVNode, render } from 'inferno';
 import VNodeFlags from 'inferno-vnode-flags';
-import { createVNode, render } from '../src';
 
 describe('rendering routine', () => {
 	let container;

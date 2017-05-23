@@ -1,7 +1,7 @@
 const { resolve, join } = require('path');
 const alias = require('rollup-plugin-alias');
 
-const ROOT = join(ROOT, '');
+const ROOT = join(__dirname, '../../../');
 
 module.exports = alias({
 	inferno: resolve(ROOT, 'packages/inferno/dist/index.js'),
